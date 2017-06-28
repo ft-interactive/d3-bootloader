@@ -5,16 +5,15 @@ export default {
   entry: 'index.js',
   dest: 'd3-bootloader.js',
   format: 'umd',
+  external: ['fs'],
+  globals: {
+    fs: 'fs'
+  },
   moduleName: 'bootd3',
   plugins: [
     resolve(),
     commonjs({
-      namedExports: {
-        'node_modules/systemjs/dist/system.src.js': [
-          'System'
-        ]
-      },
-      include: 'node_modules/systemjs',
+      include: 'node_modules/systemjs/dist/system.src.js',
     }),
   ],
 }
