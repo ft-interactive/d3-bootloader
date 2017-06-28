@@ -7,8 +7,7 @@
   "browser": "d3-bootloader.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
-    "minify": "uglifyjs --comments -c -m -o d3-bootloader.min.js d3-bootloader.js"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -25,8 +24,7 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.6.0",
-    "rollup": "^0.43.0",
-    "uglifyjs2": "0.0.1"
+    "webpack": "^3.0.0"
   },
   "dependencies": {
     "systemjs": "^0.20.14"
