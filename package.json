@@ -1,0 +1,37 @@
+{
+  "name": "d3-bootloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "browser": "d3-bootloader.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "minify": "uglifyjs --comments -c -m -o d3-bootloader.min.js d3-bootloader.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ft-interactive/d3-bootloader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ft-interactive/d3-bootloader/issues"
+  },
+  "homepage": "https://github.com/ft-interactive/d3-bootloader#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.0",
+    "rollup": "^0.43.0",
+    "uglifyjs2": "0.0.1"
+  },
+  "dependencies": {
+    "systemjs": "^0.20.14"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base"
+  }
+}
