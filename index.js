@@ -11,8 +11,6 @@
 
 /* globals SystemJS */
 
-// This adds plugin-babel, systemjs-babel-build, and maps all of the D3
-// micro-libs to the D3 monorepo.
 SystemJS.config({
   map: {
     'plugin-babel': '//unpkg.com/systemjs-plugin-babel@0.0.24',
@@ -52,6 +50,7 @@ SystemJS.config({
   },
   transpiler: 'plugin-babel',
 });
+
 window.boot = function boot(deps) {
   const defaultDeps = {
     d3: '//d3js.org/d3.v4.js',
@@ -72,28 +71,5 @@ window.boot = function boot(deps) {
       col[keys[i]] = v; // eslint-disable-line no-param-reassign
       return col;
     }, {});
-  });
-};
-
-window.boot = function boot(deps) {
-  const defaultDeps = {
-    d3: '//d3js.org/d3.v4.js',
-    d3SelectionMulti: '//d3js.org/d3-selection-multi.v1.min.js',
-    gChartframe: '//unpkg.com/g-chartframe',
-    gYAxisLinear: '//rawgit.com/ft-interactive/g-yaxislinear/master/build/g-yaxislinear.js',
-    gXAxisDate: '//rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js',
-  };
-
-  const merged = Object.assign({}, defaultDeps, deps);
-  const resolved = Promise.all(Object.keys(merged)
-    .map(item => merged[item]).map(item => SystemJS.import(item)));
-
-  return resolved.then((items) => {
-    const keys = Object.keys(merged);
-    return items.reduce((_col, v, i) => {
-      const col = _col;
-      col[keys[i]] = v;
-      return col;
-    });
   });
 };
