@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("fs"));
+	else if(typeof define === 'function' && define.amd)
+		define(["fs"], factory);
+	else if(typeof exports === 'object')
+		exports["bootD3"] = factory(require("fs"));
+	else
+		root["bootD3"] = factory(root["fs"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_8__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -6396,7 +6406,7 @@ module.exports = Array.isArray || function (arr) {
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = fs;
+module.exports = __WEBPACK_EXTERNAL_MODULE_8__;
 
 /***/ }),
 /* 9 */
@@ -6412,3 +6422,4 @@ webpackEmptyContext.id = 9;
 
 /***/ })
 /******/ ]);
+});
