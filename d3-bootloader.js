@@ -128,7 +128,7 @@ __WEBPACK_IMPORTED_MODULE_0_systemjs___default.a.config({
   map: {
     'plugin-babel': '//unpkg.com/systemjs-plugin-babel@0.0.24',
     'systemjs-babel-build': '//unpkg.com/systemjs-plugin-babel@0.0.24/systemjs-babel-browser.js',
-    'd3': '//d3js.org/d3.v4.js',
+    d3: '//d3js.org/d3.v4.js',
     'd3-array': '//d3js.org/d3.v4.js',
     'd3-axis': '//d3js.org/d3.v4.js',
     'd3-brush': '//d3js.org/d3.v4.js',
@@ -165,7 +165,7 @@ __WEBPACK_IMPORTED_MODULE_0_systemjs___default.a.config({
 });
 
 function boot(deps) {
-  var defaultDeps = {
+  const defaultDeps = {
     d3: '//d3js.org/d3.v4.js',
     d3SelectionMulti: '//d3js.org/d3-selection-multi.v1.min.js',
     gChartframe: '//unpkg.com/g-chartframe',
@@ -173,13 +173,14 @@ function boot(deps) {
     gXAxisDate: '//rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js',
   };
 
-  var merged = Object.assign({}, defaultDeps, deps);
-  var resolved = Promise.all(Object.keys(merged)
-    .map(function(item){ return merged[item]; }).map(__WEBPACK_IMPORTED_MODULE_0_systemjs___default.a.import));
+  const merged = Object.assign({}, defaultDeps, deps);
+  const resolved = Promise.all(Object.keys(merged)
+    .map(item => merged[item]).map(item => __WEBPACK_IMPORTED_MODULE_0_systemjs___default.a.import(item)));
 
-  return resolved.then(function(items){
-    var keys = Object.keys(merged);
-    return items.reduce(function(col, v, i){
+  return resolved.then((items) => {
+    const keys = Object.keys(merged);
+    return items.reduce((_col, v, i) => {
+      const col = _col;
       col[keys[i]] = v;
       return col;
     });
