@@ -9,7 +9,7 @@
  * in-browser tool for creating static print visualisations).
  */
 
-import SystemJS from 'systemjs';
+/* globals SystemJS */
 
 // This adds plugin-babel, systemjs-babel-build, and maps all of the D3
 // micro-libs to the D3 monorepo.
