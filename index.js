@@ -53,7 +53,7 @@ SystemJS.config({
   transpiler: 'plugin-babel',
 });
 
-export default function boot(deps) {
+window.boot = function boot(deps) {
   const defaultDeps = {
     d3: '//d3js.org/d3.v4.js',
     d3SelectionMulti: '//d3js.org/d3-selection-multi.v1.min.js',
@@ -74,4 +74,4 @@ export default function boot(deps) {
       return col;
     });
   });
-}
+};
