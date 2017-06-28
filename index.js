@@ -52,6 +52,28 @@ SystemJS.config({
   },
   transpiler: 'plugin-babel',
 });
+window.boot = function boot(deps) {
+  const defaultDeps = {
+    d3: '//d3js.org/d3.v4.js',
+    d3SelectionMulti: '//d3js.org/d3-selection-multi.v1.min.js',
+    gChartframe: '//unpkg.com/g-chartframe',
+    gYAxisLinear: '//rawgit.com/ft-interactive/g-yaxislinear/master/build/g-yaxislinear.js',
+    gXAxisDate: '//rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js',
+    gLegend: '//rawgit.com/ft-interactive/g-legend/master/build/g-legend.js',
+  };
+
+  const merged = Object.assign({}, defaultDeps, deps);
+  const resolved = Promise.all(Object.keys(merged)
+    .map(item => merged[item]).map(item => SystemJS.import(item)));
+
+  return resolved.then((items) => {
+    const keys = Object.keys(merged);
+    return items.reduce((col, v, i) => {
+      col[keys[i]] = v; // eslint-disable-line no-param-reassign
+      return col;
+    }, {});
+  });
+};
 
 window.boot = function boot(deps) {
   const defaultDeps = {
