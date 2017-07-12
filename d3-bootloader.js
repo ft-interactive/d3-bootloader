@@ -4034,8 +4034,6 @@ var SystemJS = unwrapExports(system_src);
  * in-browser tool for creating static print visualisations).
  */
 
-// This adds plugin-babel, systemjs-babel-build, and maps all of the D3
-// micro-libs to the D3 monorepo.
 SystemJS.config({
   map: {
     'plugin-babel': '//unpkg.com/systemjs-plugin-babel@0.0.24',
@@ -4072,33 +4070,16 @@ SystemJS.config({
     'd3-voronoi': '//d3js.org/d3.v4.js',
     'd3-zoom': '//d3js.org/d3.v4.js',
     'g-chartcolour': '//unpkg.com/g-chartcolour',
+    'g-legend': '//unpkg.com/g-legend',
+    'g-chartframe': '//unpkg.com/g-chartframe',
+    'g-xaxisdate': '//rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js',
+    'g-yaxislinear': '//rawgit.com/ft-interactive/g-yaxislinear/master/build/g-yaxislinear.js',
   },
   transpiler: 'plugin-babel',
 });
 
-function boot(deps) {
-  const defaultDeps = {
-    d3: '//d3js.org/d3.v4.js',
-    d3SelectionMulti: '//d3js.org/d3-selection-multi.v1.min.js',
-    gChartframe: '//unpkg.com/g-chartframe',
-    gYAxisLinear: '//rawgit.com/ft-interactive/g-yaxislinear/master/build/g-yaxislinear.js',
-    gXAxisDate: '//rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js',
-  };
+var index = SystemJS.import('./index.js');
 
-  const merged = Object.assign({}, defaultDeps, deps);
-  const resolved = Promise.all(Object.keys(merged)
-    .map(item => merged[item]).map(item => SystemJS.import(item)));
-
-  return resolved.then((items) => {
-    const keys = Object.keys(merged);
-    return items.reduce((_col, v, i) => {
-      const col = _col;
-      col[keys[i]] = v;
-      return col;
-    });
-  });
-}
-
-return boot;
+return index;
 
 })));

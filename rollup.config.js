@@ -7,7 +7,7 @@ export default {
   format: 'umd',
   external: ['fs'],
   globals: {
-    fs: 'fs'
+    fs: 'fs',
   },
   moduleName: 'bootd3',
   plugins: [
@@ -16,4 +16,4 @@ export default {
       include: 'node_modules/systemjs/dist/system.src.js',
     }),
   ],
-}
+};
