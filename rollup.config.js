@@ -6,9 +6,6 @@ export default {
   dest: 'd3-bootloader.js',
   format: 'umd',
   external: ['fs'],
-  globals: {
-    fs: 'fs',
-  },
   moduleName: 'bootd3',
   plugins: [
     resolve(),

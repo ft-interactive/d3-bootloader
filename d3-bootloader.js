@@ -4,7 +4,7 @@
 	(global.bootd3 = factory(global.fs));
 }(this, (function (fs) { 'use strict';
 
-fs = 'default' in fs ? fs['default'] : fs;
+fs = fs && 'default' in fs ? fs['default'] : fs;
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -4019,6 +4019,7 @@ if ('object' !== 'undefined' && module.exports)
   module.exports = System;
 
 }());
+
 });
 
 var SystemJS = unwrapExports(system_src);
