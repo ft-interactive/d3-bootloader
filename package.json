@@ -8,7 +8,6 @@
   "scripts": {
     "build": "rollup -c",
     "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
-    "prepublish": "npm run build && npm run minify",
     "lint": "eslint index.js"
   },
   "repository": {
