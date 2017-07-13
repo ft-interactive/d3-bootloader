@@ -1,5 +1,5 @@
 {
-  "name": "@Financial-Times/d3-bootloader",
+  "name": "@financial-times/d3-bootloader",
   "version": "0.0.0",
   "description": "Load D3 via SystemJS",
   "main": "index.js",
