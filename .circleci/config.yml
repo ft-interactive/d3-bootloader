@@ -36,3 +36,6 @@ jobs:
               npm-prepublish --verbose
               npm publish --access public
             fi
+    deployment:
+      trigger_tag:
+        tag: /v.*/
