@@ -3,10 +3,10 @@ import resolve from 'rollup-plugin-node-resolve';
 
 export default {
   entry: 'index.js',
-  dest: 'd3-bootloader.js',
+  dest: 'dist/d3-bootloader.js',
   format: 'umd',
   external: ['fs'],
-  moduleName: 'bootd3',
+  moduleName: 'bootD3',
   plugins: [
     resolve(),
     commonjs({

@@ -1,14 +1,15 @@
 {
   "name": "d3-bootloader",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "Load D3 via SystemJS",
   "main": "index.js",
   "module": "index.js",
-  "browser": "d3-bootloader.min.js",
+  "browser": "dist/d3-bootloader.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "minify": "uglifyjs --comments -c -m -o d3-bootloader.min.js d3-bootloader.js"
+    "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
+    "prepublish": "npm run build && npm run minify",
+    "lint": "eslint index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.6.0",
+    "npm-prepublish": "^1.2.2",
     "rollup": "^0.43.0",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
