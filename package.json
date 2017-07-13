@@ -1,6 +1,9 @@
 {
   "name": "@financial-times/d3-bootloader",
   "version": "0.0.0",
+  "files": [
+    "dist/"
+  ],
   "description": "Load D3 via SystemJS",
   "main": "index.js",
   "module": "index.js",
