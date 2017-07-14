@@ -49,8 +49,9 @@ SystemJS.config({
     'g-chartcolour': '//unpkg.com/g-chartcolour',
     'g-legend': '//unpkg.com/g-legend',
     'g-chartframe': '//unpkg.com/g-chartframe',
-    'g-xaxisdate': '//rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js',
-    'g-yaxislinear': '//rawgit.com/ft-interactive/g-yaxislinear/master/build/g-yaxislinear.js',
+    'g-axis': '//cdn.rawgit.com/ft-interactive/g-axis/4bbce2f6/build/g-axis.js',
+    'g-xaxisdate': '//cdn.rawgit.com/ft-interactive/g-axis/4bbce2f6/build/g-axis.js',
+    'g-yaxislinear': '//cdn.rawgit.com/ft-interactive/g-axis/4bbce2f6/build/g-axis.js',
   },
   transpiler: 'plugin-babel',
 });
