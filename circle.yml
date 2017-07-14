@@ -3,7 +3,7 @@ machine:
     version: 8
 dependencies:
   pre:
-    - echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc
+    - printf "_auth = $NPM_AUTH_TOKEN\nemail = $NPM_EMAIL\n" > .npmrc
 deployment:
   release:
     tag: /v.*/
