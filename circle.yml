@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 8
+dependencies:
+  pre:
+    - echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc
+  post:
+    - npm
+deployment:
+  release:
+    tag: /v.*/
+    owner: ft-interactive
+    commands:
+      - npm-prepublish --verbose
+      - npm publish --access public
+general:
+  artifacts:
+    - coverage
