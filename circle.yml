@@ -3,7 +3,7 @@ machine:
     version: 8
 dependencies:
   pre:
-    - printf "_auth = $NPM_AUTH_TOKEN\nemail = $NPM_EMAIL\n" > .npmrc
+    - printf "_auth = $NPM_AUTH_TOKEN\nemail = $NPM_EMAIL\n" > ~/.npmrc
 deployment:
   release:
     tag: /v.*/
