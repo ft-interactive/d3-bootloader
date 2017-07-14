@@ -4,8 +4,6 @@ machine:
 dependencies:
   pre:
     - echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc
-  post:
-    - npm
 deployment:
   release:
     tag: /v.*/
