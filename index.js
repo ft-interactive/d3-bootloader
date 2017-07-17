@@ -13,8 +13,8 @@ import SystemJS from 'systemjs';
 
 SystemJS.config({
   map: {
-    'plugin-babel': '//unpkg.com/systemjs-plugin-babel@0.0.24',
-    'systemjs-babel-build': '//unpkg.com/systemjs-plugin-babel@0.0.24/systemjs-babel-browser.js',
+    'plugin-babel': '//unpkg.com/systemjs-plugin-babel@0.0.25',
+    'systemjs-babel-build': '//unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js',
     d3: '//d3js.org/d3.v4.js',
     'd3-array': '//d3js.org/d3.v4.js',
     'd3-axis': '//d3js.org/d3.v4.js',
