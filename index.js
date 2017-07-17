@@ -46,6 +46,7 @@ SystemJS.config({
     'd3-transition': '//d3js.org/d3.v4.js',
     'd3-voronoi': '//d3js.org/d3.v4.js',
     'd3-zoom': '//d3js.org/d3.v4.js',
+    'd3-selection-multi': '//unpkg.com/d3-selection-multi@1.0.1',
     'g-chartcolour': '//unpkg.com/g-chartcolour',
     'g-legend': '//unpkg.com/g-legend',
     'g-chartframe': '//unpkg.com/g-chartframe',
