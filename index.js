@@ -50,9 +50,9 @@ SystemJS.config({
     'g-chartcolour': '//unpkg.com/g-chartcolour',
     'g-legend': '//unpkg.com/g-legend',
     'g-chartframe': '//unpkg.com/g-chartframe',
-    'g-axis': '//cdn.rawgit.com/ft-interactive/g-axis/4bbce2f6/build/g-axis.js',
-    'g-xaxisdate': '//cdn.rawgit.com/ft-interactive/g-axis/4bbce2f6/build/g-axis.js',
-    'g-yaxislinear': '//cdn.rawgit.com/ft-interactive/g-axis/4bbce2f6/build/g-axis.js',
+    'g-axis': '//rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
+    'g-xaxisdate': '//rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
+    'g-yaxislinear': '//rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
   },
   transpiler: 'plugin-babel',
 });
