@@ -12,7 +12,7 @@
     "build": "rollup -c",
     "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
     "lint": "eslint index.js",
-    "prepublish": "npm run build && npm run minify"
+    "prepare": "npm run build && npm run minify"
   },
   "repository": {
     "type": "git",
