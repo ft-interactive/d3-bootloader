@@ -4073,7 +4073,7 @@ SystemJS.config({
     'd3-selection-multi': 'https://unpkg.com/d3-selection-multi@1.0.1',
     'g-chartcolour': 'https://rawgit.com/ft-interactive/g-chartcolour/master/build/g-chartcolour.js',
     'g-legend': 'https://rawgit.com/ft-interactive/g-legend/master/build/g-legend.js',
-    'g-chartframe': 'https://rawgit.com/ft-interactive/g-legend/master/build/g-chartframe.js',
+    'g-chartframe': 'https://rawgit.com/ft-interactive/g-chartframe/master/build/g-chartframe.js',
     'g-axis': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
     'g-xaxisdate': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
     'g-yaxislinear': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
