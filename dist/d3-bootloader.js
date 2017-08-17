@@ -4078,6 +4078,11 @@ SystemJS.config({
     'g-xaxisdate': '//rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
     'g-yaxislinear': '//rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
   },
+  packages: {
+    'plugin-babel': {
+      main: 'plugin-babel.js',
+    },
+  },
   transpiler: 'plugin-babel',
 });
 
