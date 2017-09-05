@@ -53,6 +53,7 @@ SystemJS.config({
     'g-axis': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
     'g-xaxisdate': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
     'g-yaxislinear': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
+    'd3-quarterly': 'https://rawgit.com/ft-interactive/d3-quarterly/master/index.js',
   },
   packages: {
     'plugin-babel': {
