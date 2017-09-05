@@ -47,6 +47,7 @@ SystemJS.config({
     'd3-voronoi': 'https://d3js.org/d3.v4.js',
     'd3-zoom': 'https://d3js.org/d3.v4.js',
     'd3-selection-multi': 'https://unpkg.com/d3-selection-multi@1.0.1',
+    'topojson-client': 'https://unpkg.com/topojson-client@3',
     'g-chartcolour': 'https://rawgit.com/ft-interactive/g-chartcolour/master/build/g-chartcolour.js',
     'g-legend': 'https://rawgit.com/ft-interactive/g-legend/master/build/g-legend.js',
     'g-chartframe': 'https://rawgit.com/ft-interactive/g-chartframe/master/build/g-chartframe.js',
