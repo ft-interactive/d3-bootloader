@@ -4035,7 +4035,9 @@ var SystemJS = unwrapExports(system_src);
  * in-browser tool for creating static print visualisations).
  */
 
-SystemJS.config({
+const merge = require('lodash.merge');
+
+const defaultConfig = {
   map: {
     'plugin-babel': 'https://unpkg.com/systemjs-plugin-babel@0.0.25',
     'systemjs-babel-build': 'https://unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js',
@@ -4071,12 +4073,14 @@ SystemJS.config({
     'd3-voronoi': 'https://d3js.org/d3.v4.js',
     'd3-zoom': 'https://d3js.org/d3.v4.js',
     'd3-selection-multi': 'https://unpkg.com/d3-selection-multi@1.0.1',
+    'topojson-client': 'https://unpkg.com/topojson-client@3',
     'g-chartcolour': 'https://rawgit.com/ft-interactive/g-chartcolour/master/build/g-chartcolour.js',
     'g-legend': 'https://rawgit.com/ft-interactive/g-legend/master/build/g-legend.js',
     'g-chartframe': 'https://rawgit.com/ft-interactive/g-chartframe/master/build/g-chartframe.js',
     'g-axis': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
     'g-xaxisdate': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
     'g-yaxislinear': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
+    'd3-quarterly': 'https://rawgit.com/ft-interactive/d3-quarterly/master/index.js',
   },
   packages: {
     'plugin-babel': {
@@ -4084,7 +4088,9 @@ SystemJS.config({
     },
   },
   transpiler: 'plugin-babel',
-});
+};
+
+SystemJS.config(merge({}, defaultConfig, window.D3BootloaderConfig));
 
 var index = SystemJS.import('./index.js');
 

@@ -38,6 +38,27 @@ sundry `ft-interactive` modules.
 
 ...Which, given the above `index.js` module, will alert with "Yep you can use ES2017 here too".
 
+### What if I need more modules?
+
+It's not like you can include this on page and then add any module in the npmjs.org registry. If you
+want to add another module (that's deliverable via a CDN like unpkg), add the following *before*
+your d3-bootloader script tag:
+
+```js
+<script>
+  window.D3BootloaderConfig = {
+    map: {
+      'd3-jetpack': 'https://unpkg.com/d3-jetpack@2',
+    }
+  }
+</script>
+```
+
+Each key in the `map` object is what you'll import, and the value is a CDN resource exporting some
+kind of UMD module.
+
+For more info, please see the [SystemJS Configuration API Docs][2].
+
 ### Should this be used in production?
 
 **Oh hells nawww** — on-the-fly Babel transpilation isn't exactly the lightest thing ever.
@@ -47,3 +68,4 @@ Not only that, but every module you load from `index.js` will create a separate 
 This project is mainly intended to help streamline the creation of examples for [ft-interactive/visual-vocabulary-templates][1]. Again, *you probably don't want to use this in production.*
 
 [1]: https://github.com/ft-interactive/visual-vocabulary-templates
+[2]: https://github.com/systemjs/systemjs/blob/master/docs/config-api.md

@@ -11,7 +11,9 @@
 
 import SystemJS from 'systemjs';
 
-SystemJS.config({
+const merge = require('lodash.merge');
+
+const defaultConfig = {
   map: {
     'plugin-babel': 'https://unpkg.com/systemjs-plugin-babel@0.0.25',
     'systemjs-babel-build': 'https://unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js',
@@ -62,6 +64,8 @@ SystemJS.config({
     },
   },
   transpiler: 'plugin-babel',
-});
+};
+
+SystemJS.config(merge({}, defaultConfig, window.D3BootloaderConfig));
 
 export default SystemJS.import('./index.js');
