@@ -36,7 +36,6 @@
     "uglify-js": "^3.0.24"
   },
   "dependencies": {
-    "lodash.merge": "^4.6.0",
     "systemjs": "^0.20.14"
   },
   "eslintConfig": {
