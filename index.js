@@ -57,7 +57,7 @@ var defaultMap = {
 };
 
 var config = {
-  map: Object.assign({}, defaultMap, window.D3BootloaderConfig),
+  map: Object.assign({}, defaultMap, window.D3_BOOTLOADER_MODULES),
   packages: {
     'plugin-babel': {
       main: 'plugin-babel.js',

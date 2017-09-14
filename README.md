@@ -46,10 +46,8 @@ your d3-bootloader script tag:
 
 ```js
 <script>
-  window.D3BootloaderConfig = {
-    map: {
-      'd3-jetpack': 'https://unpkg.com/d3-jetpack@2',
-    }
+  window.D3_BOOTLOADER_MODULES = {
+    'd3-jetpack': 'https://unpkg.com/d3-jetpack@2',
   }
 </script>
 ```
