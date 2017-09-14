@@ -13,7 +13,7 @@ import SystemJS from 'systemjs';
 
 var defaultMap = {
   'plugin-babel': 'https://unpkg.com/systemjs-plugin-babel@0.0.25',
-  'plugin-json': 'plugin-json/json.js',
+  'plugin-json': 'https://unpkg.com/systemjs-plugin-json@0.3.0',
   'systemjs-babel-build': 'https://unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js',
   d3: 'https://d3js.org/d3.v4.js',
   'd3-array': 'https://d3js.org/d3.v4.js',
