@@ -11,7 +11,7 @@
 
 import SystemJS from 'systemjs';
 
-const defaultMap = {
+var defaultMap = {
   'plugin-babel': 'https://unpkg.com/systemjs-plugin-babel@0.0.25',
   'systemjs-babel-build': 'https://unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js',
   d3: 'https://d3js.org/d3.v4.js',
@@ -56,7 +56,7 @@ const defaultMap = {
   'd3-quarterly': 'https://rawgit.com/ft-interactive/d3-quarterly/master/index.js',
 };
 
-const config = {
+var config = {
   map: Object.assign({}, defaultMap, window.D3BootloaderConfig),
   packages: {
     'plugin-babel': {
