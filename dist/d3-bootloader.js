@@ -4079,6 +4079,7 @@ var defaultMap = {
   'g-xaxisdate': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
   'g-yaxislinear': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
   'd3-quarterly': 'https://rawgit.com/ft-interactive/d3-quarterly/master/index.js',
+  '@financial-times/load-data': 'https://unpkg.com/@financial-times/load-data@^1.0.2',
 };
 
 var config = {
