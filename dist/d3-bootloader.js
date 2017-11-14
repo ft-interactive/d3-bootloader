@@ -4079,7 +4079,8 @@ var defaultMap = {
   'g-xaxisdate': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
   'g-yaxislinear': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
   'd3-quarterly': 'https://rawgit.com/ft-interactive/d3-quarterly/master/index.js',
-  '@financial-times/load-data': 'https://unpkg.com/@financial-times/load-data@^1.0.2',
+  'save-svg-as-png': 'https://unpkg.com/save-svg-as-png@^1.2.0/saveSvgAsPng.js',
+  '@financial-times/load-data': 'https://unpkg.com/@financial-times/load-data@^1.0.2/dist/loadData.dist.min.js',
 };
 
 var config = {
