@@ -42,6 +42,10 @@
     "extends": "airbnb-base",
     "env": {
       "browser": true
+    },
+    "rules": {
+      "no-var": [0],
+      "quote-props": [0]
     }
   }
 }
