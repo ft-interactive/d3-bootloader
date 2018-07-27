@@ -46,6 +46,7 @@ var defaultMap = {
   'd3-transition': 'https://d3js.org/d3.v4.js',
   'd3-voronoi': 'https://d3js.org/d3.v4.js',
   'd3-zoom': 'https://d3js.org/d3.v4.js',
+  'g-annotations': 'https://rawgit.com/ft-interactive/g-annotations/master/build/g-annotations.js',
   'g-axis': 'https://rawgit.com/ft-interactive/g-axis/master/build/g-axis.js',
   'g-chartcolour': 'https://rawgit.com/ft-interactive/g-chartcolour/master/build/g-chartcolour.js',
   'g-chartframe': 'https://rawgit.com/ft-interactive/g-chartframe/master/build/g-chartframe.js',
