@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: node:8
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore cache (node_modules)
+          key: npm-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: npm ci
+          command: npm ci
+      - run:
+          name: Build
+          command: npm run build
+      - save_cache:
+          name: Save cache (node_modules)
+          key: npm-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules/
+      - deploy:
+          name: Deploy
+          command: npm-prepublish --verbose && npm publish --access public
+workflows:
+  version: 2
+  publish:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v[\d.]+/
