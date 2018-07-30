@@ -23,6 +23,9 @@ jobs:
           key: npm-cache-{{ checksum "package-lock.json" }}
           paths:
             - node_modules/
+      - run:
+          name: npm credentials
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - deploy:
           name: Deploy
           command: npx npm-prepublish --verbose && npm publish --access public
