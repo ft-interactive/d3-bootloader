@@ -3,12 +3,15 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: aendrew/starter-kit-docker:latest # https://github.com/aendrew/starter-kit-docker
+      - image: node:8
     steps:
       - checkout
       - restore_cache:
           name: Restore cache (node_modules)
           key: npm-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Upgrade npm
+          command: npm i -g npm
       - run:
           name: npm ci
           command: npm ci
@@ -22,7 +25,7 @@ jobs:
             - node_modules/
       - deploy:
           name: Deploy
-          command: npm-prepublish --verbose && npm publish --access public
+          command: npx npm-prepublish --verbose && npm publish --access public
 workflows:
   version: 2
   publish:
