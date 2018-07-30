@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: node:8
+      - image: aendrew/starter-kit-docker:latest # https://github.com/aendrew/starter-kit-docker
     steps:
       - checkout
       - restore_cache:
