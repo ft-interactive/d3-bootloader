@@ -37,6 +37,7 @@ var defaultMap = {
   'd3-queue': 'https://d3js.org/d3.v4.js',
   'd3-random': 'https://d3js.org/d3.v4.js',
   'd3-request': 'https://d3js.org/d3.v4.js',
+  'd3-sankey': 'https://unpkg.com/d3-sankey',
   'd3-scale': 'https://d3js.org/d3.v4.js',
   'd3-selection-multi': 'https://unpkg.com/d3-selection-multi@1.0.1',
   'd3-selection': 'https://d3js.org/d3.v4.js',
