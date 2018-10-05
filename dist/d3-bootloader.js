@@ -4038,6 +4038,7 @@ var SystemJS = unwrapExports(system_src);
 var defaultMap = {
   '@financial-times/load-data':
     'https://unpkg.com/@financial-times/load-data@^1.0.2/dist/loadData.dist.min.js',
+  'bertha-client': 'https://unpkg.com/bertha-client@4',
   d3: 'https://d3js.org/d3.v4.js',
   'd3-array': 'https://d3js.org/d3.v4.js',
   'd3-axis': 'https://d3js.org/d3.v4.js',
