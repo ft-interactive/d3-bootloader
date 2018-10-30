@@ -63,7 +63,7 @@ var defaultMap = {
   'systemjs-babel-build':
     'https://unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js',
   'topojson-client': 'https://unpkg.com/topojson-client@3',
-  assert: 'https://unpkg.com/assert@^1',
+  chai: 'https://www.chaijs.com/chai.js',
 };
 
 var config = {
