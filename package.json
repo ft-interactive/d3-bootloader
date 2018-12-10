@@ -34,8 +34,8 @@
     "eslint-plugin-import": "^2.6.0",
     "esm": "^3.0.84",
     "npm-prepublish": "^1.2.2",
-    "rollup": "^0.43.0",
-    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup": "^0.67.4",
+    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "uglify-js": "^3.0.24"
   },

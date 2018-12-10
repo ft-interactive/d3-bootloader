@@ -3,11 +3,13 @@ import resolve from "rollup-plugin-node-resolve";
 
 export default [
   {
-    entry: "index.js",
-    dest: "dist/d3-bootloader.js",
-    format: "umd",
+    input: "index.js",
+    output: {
+      file: "dist/d3-bootloader.js",
+      name: "bootD3",
+      format: "umd"
+    },
     external: ["fs"],
-    moduleName: "bootD3",
     plugins: [
       resolve(),
       commonjs({
@@ -19,9 +21,12 @@ export default [
     ]
   },
   {
-    entry: "offline/index.js",
-    dest: "offline/d3-bootloader.js",
-    format: "umd",
+    input: "offline/index.js",
+    output: {
+      file: "offline/d3-bootloader.js",
+      name: "bootD3",
+      format: "umd"
+    },
     external: ["fs"],
     moduleName: "bootD3",
     plugins: [
