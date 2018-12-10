@@ -10,6 +10,7 @@
   "browser": "dist/d3-bootloader.min.js",
   "scripts": {
     "build": "rollup -c",
+    "offline:download-deps": "node -r esm offline/offline.js",
     "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
     "lint": "eslint index.js",
     "prepare": "npm run build && npm run minify"
@@ -26,10 +27,12 @@
   },
   "homepage": "https://github.com/ft-interactive/d3-bootloader#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "debug": "^3.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.6.0",
+    "esm": "^3.0.84",
     "npm-prepublish": "^1.2.2",
     "rollup": "^0.43.0",
     "rollup-plugin-commonjs": "^8.0.2",

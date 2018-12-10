@@ -10,10 +10,18 @@
  */
 
 import SystemJS from "systemjs";
-import modules from "./modules.js";
+import modules from "../modules.js";
+
+const offlineModules = Object.entries(modules).reduce(
+  (a, [k, v]) =>
+    Object.assign({}, a, {
+      [k]: `./${/^@/.test(pkg) ? pkg.slice(pkg.indexOf("/") + 1) : pkg}.js`
+    }),
+  {}
+);
 
 var config = {
-  map: modules,
+  map: offlineModules,
   packages: {
     "plugin-babel": {
       main: "plugin-babel.js"

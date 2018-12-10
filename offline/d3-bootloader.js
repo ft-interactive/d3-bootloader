@@ -4089,8 +4089,16 @@ var modules = {
  * in-browser tool for creating static print visualisations).
  */
 
+const offlineModules = Object.entries(modules).reduce(
+  (a, [k, v]) =>
+    Object.assign({}, a, {
+      [k]: `./${/^@/.test(pkg) ? pkg.slice(pkg.indexOf("/") + 1) : pkg}.js`
+    }),
+  {}
+);
+
 var config = {
-  map: modules,
+  map: offlineModules,
   packages: {
     "plugin-babel": {
       main: "plugin-babel.js"
