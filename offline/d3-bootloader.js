@@ -4109,7 +4109,7 @@
 
 	SystemJS.config(config);
 
-	var index = SystemJS.import("./index.js");
+	var index = SystemJS.import("../index.js");
 
 	return index;
 

@@ -33,4 +33,4 @@ var config = {
 
 SystemJS.config(config);
 
-export default SystemJS.import("./index.js");
+export default SystemJS.import("../index.js");
