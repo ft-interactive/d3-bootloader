@@ -15,12 +15,18 @@ import modules from "../modules.js";
 const offlineModules = Object.entries(modules).reduce(
   (a, [k, v]) =>
     Object.assign({}, a, {
-      [k]: `./${/^@/.test(pkg) ? pkg.slice(pkg.indexOf("/") + 1) : pkg}.js`
+      [k]: `./${
+        /d3js.org\/d3.v4.js/.test(v)
+          ? "d3"
+          : /^@/.test(pkg)
+          ? pkg.slice(pkg.indexOf("/") + 1)
+          : pkg
+      }.js`
     }),
   {}
 );
 
-var config = {
+const config = {
   map: offlineModules,
   packages: {
     "plugin-babel": {
