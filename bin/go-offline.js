@@ -7,7 +7,7 @@
 const cheerio = require("cheerio");
 const Axios = require("axios");
 const execa = require("execa");
-const rimraf = require("rimraf");
+const tmp = require("tmp");
 const { readFileSync, writeFileSync, createWriteStream } = require("fs");
 
 (async () => {
@@ -69,18 +69,26 @@ const { readFileSync, writeFileSync, createWriteStream } = require("fs");
 
     console.info("Download complete.");
     console.info("Extracting...");
-    await execa("mkdir", [`${process.cwd()}/offline-tmp`]);
-    await execa("tar", ["-c", "offline-tmp", "--strip=1", "-xzvf", outPath]);
-    await execa("mv", [`${process.cwd()}/offline-tmp/offline`, process.cwd()]);
-    await new Promise(res => rimraf(`${process.cwd()}/offline-tmp`, res));
 
+    // Create tmp dir.
+    const tmpobj = tmp.dirSync();
+
+    // Extract to tmp dir
+    await execa("tar", ["-c", tmpobj.name, "--strip=1", "-xzvf", outPath]);
+
+    // Move tmpDir/offline to $CWD
+    await execa("mv", [`${tmpobj.name}/offline`, process.cwd()]);
+
+    // Remove tmp dir.
+    tmpobj.removeCallback();
+
+    // Write updated index.html to $CWD
     console.info("Updating index.html...");
     bootloaderTag.attr("src", "./offline/index.js");
     writeFileSync(`${process.cwd()}/index.html`, $.html());
 
     console.info("Done!");
   } catch (e) {
-    console.dir(e);
     console.error(e);
   }
 })();
