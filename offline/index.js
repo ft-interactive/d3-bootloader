@@ -16,7 +16,7 @@ const offlineModules = Object.entries(modules).reduce(
   (a, [k, v]) =>
     Object.assign({}, a, {
       [k]: `./${
-        /d3js.org\/d3.v4.js/.test(v)
+        /d3js\.org\/d3\./.test(v)
           ? "d3"
           : /^@/.test(pkg)
           ? pkg.slice(pkg.indexOf("/") + 1)

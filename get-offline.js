@@ -13,7 +13,7 @@ Promise.all(Object.entries(modules).map(item => downloadDependency(...item)))
   .catch(console.error);
 
 async function downloadDependency(pkg, url) {
-  const pkgName = /d3js.org\/d3.v4.js/.test(url)
+  const pkgName = /d3js\.org\/d3\./.test(url)
     ? "d3"
     : /^@/.test(pkg)
     ? pkg.slice(pkg.indexOf("/") + 1)
