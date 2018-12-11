@@ -4,6 +4,9 @@
   "files": [
     "dist/"
   ],
+  "bin": {
+    "offline": "bin/go-offline.js"
+  },
   "description": "Load D3 via SystemJS",
   "main": "index.js",
   "module": "index.js",
@@ -40,6 +43,8 @@
     "uglify-js": "^3.0.24"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "execa": "^1.0.0",
     "systemjs": "^0.20.14"
   },
   "eslintConfig": {
