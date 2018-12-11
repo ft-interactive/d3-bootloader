@@ -1,3 +1,4 @@
 offline/*
 !offline/index.js
 node_modules
+dist/
