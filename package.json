@@ -2,7 +2,8 @@
   "name": "@financial-times/d3-bootloader",
   "version": "0.0.0",
   "files": [
-    "dist/"
+    "dist/",
+    "offline/"
   ],
   "bin": {
     "offline": "bin/go-offline.js"
@@ -16,14 +17,14 @@
     "offline:download-deps": "node -r esm offline/offline.js",
     "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
     "lint": "eslint index.js",
-    "prepare": "npm run build && npm run minify"
+    "prepare": "npm run offline:download-deps && npm run build && npm run minify"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ft-interactive/d3-bootloader.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ændrew Rininsland <andrew.rininsland@ft.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ft-interactive/d3-bootloader/issues"
@@ -45,6 +46,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "execa": "^1.0.0",
+    "pacote": "^9.2.3",
     "systemjs": "^0.20.14",
     "tmp": "0.0.33"
   },

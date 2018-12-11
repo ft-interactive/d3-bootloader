@@ -8,6 +8,8 @@ const cheerio = require("cheerio");
 const Axios = require("axios");
 const execa = require("execa");
 const tmp = require("tmp");
+const npm = require("npm");
+const pacote = require("pacote");
 const { readFileSync, writeFileSync, createWriteStream } = require("fs");
 
 (async () => {
@@ -35,52 +37,44 @@ const { readFileSync, writeFileSync, createWriteStream } = require("fs");
       console.error(
         "Using a specified version of d3-bootloader deps is current unsupported."
       );
-      console.info("Falling back to using `master` branch.");
-      version = "master";
+      console.info("Falling back to using `latest` release.");
+      version = "latest";
       // @TODO write version handling logic
     } else {
-      version = "master";
-      console.info("Using `master` branch dependencies.");
+      version = "latest";
+      console.info("Using `latest` release dependencies.");
     }
 
     const downloadUrl = `https://api.github.com/repos/ft-interactive/d3-bootloader/tarball/${version}`;
-    const outPath = `${process.cwd()}/offline.tgz`;
 
     console.info("Downloading dependencies...");
-    const response = await Axios({
-      method: "GET",
-      url: downloadUrl,
-      responseType: "stream"
-    });
 
-    // pipe the result stream into a file on disk
-    response.data.pipe(createWriteStream(outPath));
+    // Create a tmp file
+    const tmpFile = tmp.fileSync();
 
-    // return a promise and resolve when download finishes
-    await new Promise((resolve, reject) => {
-      response.data.on("end", () => {
-        resolve();
-      });
-
-      response.data.on("error", () => {
-        reject();
-      });
-    });
+    // Download tarball to tmpfile
+    await pacote.tarball.toFile(
+      `@financial-times/d3-bootloader@${version}`,
+      tmpFile.name
+    );
 
     console.info("Download complete.");
     console.info("Extracting...");
 
     // Create tmp dir.
-    const tmpobj = tmp.dirSync();
+    const tmpDir = tmp.dirSync();
 
     // Extract to tmp dir
-    await execa("tar", ["-c", tmpobj.name, "--strip=1", "-xzvf", outPath]);
+    await execa("tar", ["-C", tmpDir.name, "--strip=1", "-xzvf", tmpFile.name]);
 
     // Move tmpDir/offline to $CWD
-    await execa("mv", [`${tmpobj.name}/offline`, process.cwd()]);
+    await execa("mv", [`${tmpDir.name}/offline`, process.cwd()]);
 
     // Remove tmp dir.
-    tmpobj.removeCallback();
+    tmpDir.removeCallback();
+
+    // Remove the tarball
+    tmpFile.removeCallback();
 
     // Write updated index.html to $CWD
     console.info("Updating index.html...");
