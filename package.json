@@ -14,7 +14,7 @@
   "browser": "dist/d3-bootloader.min.js",
   "scripts": {
     "build": "rollup -c",
-    "offline:download-deps": "node -r esm offline/offline.js",
+    "offline:download-deps": "node -r esm get-offline.js",
     "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
     "lint": "eslint index.js",
     "prepare": "npm run offline:download-deps && npm run build && npm run minify"
