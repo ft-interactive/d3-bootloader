@@ -8,6 +8,7 @@
   "main": "index.js",
   "module": "index.js",
   "browser": "dist/d3-bootloader.min.js",
+  "unpkg": "dist/d3-bootloader.min.js",
   "scripts": {
     "build": "rollup -c",
     "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
