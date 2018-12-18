@@ -58,7 +58,7 @@ var defaultMap = {
   "g-legend": "https://unpkg.com/g-legend@0.0.8/build/g-legend.js",
   "g-xaxisdate": "https://unpkg.com/g-axis@^1/build/g-axis.js",
   "g-yaxislinear": "https://unpkg.com/g-axis@^1/build/g-axis.js",
-  "plugin-babel": "https://unpkg.com/systemjs-plugin-babel/plugin-babel.js",
+  // "plugin-babel": "https://unpkg.com/systemjs-plugin-babel/plugin-babel.js",
   "plugin-json": "https://unpkg.com/systemjs-plugin-json@0.3.0/json.js",
   "save-svg-as-png":
     "https://unpkg.com/save-svg-as-png@1.4.6/lib/saveSvgAsPng.js",
@@ -73,11 +73,11 @@ var defaultMap = {
 
 var config = {
   map: Object.assign({}, defaultMap, window.D3_BOOTLOADER_MODULES),
-  packages: {
-    "plugin-babel": {
-      main: "plugin-babel.js"
-    }
-  },
+  // packages: {
+  //   "plugin-babel": {
+  //     main: "plugin-babel.js"
+  //   }
+  // },
   meta: { "*.json": { loader: "plugin-json" } },
   transpiler: "plugin-babel"
 };
