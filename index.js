@@ -59,7 +59,7 @@ var defaultMap = {
   "g-xaxisdate": "https://unpkg.com/g-axis@^1/build/g-axis.js",
   "g-yaxislinear": "https://unpkg.com/g-axis@^1/build/g-axis.js",
   "plugin-babel":
-    "https://unpkg.com/systemjs-plugin-babel@0.0.25/plugin-babel.js",
+    "https://unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js",
   "plugin-json": "https://unpkg.com/systemjs-plugin-json@0.3.0/json.js",
   "save-svg-as-png":
     "https://unpkg.com/save-svg-as-png@1.4.6/lib/saveSvgAsPng.js",
