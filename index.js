@@ -54,8 +54,8 @@ var defaultMap = {
   "g-axis": "https://unpkg.com/g-axis@^1/build/g-axis.js",
   "g-chartcolour":
     "https://unpkg.com/g-chartcolour@0.8.26/build/g-chartcolour.js",
-  "g-chartframe": "https://unpkg.com/g-chartframe@5.2.2/build/g-chartframe.js",
-  "g-legend": "https://unpkg.com/g-legend@0.0.8/build/g-legend.js",
+  "g-chartframe": "https://unpkg.com/g-chartframe@^5.3.0/build/g-chartframe.js",
+  "g-legend": "https://unpkg.com/g-legend@^1.0.0/build/g-legend.js",
   "g-xaxisdate": "https://unpkg.com/g-axis@^1/build/g-axis.js",
   "g-yaxislinear": "https://unpkg.com/g-axis@^1/build/g-axis.js",
   "plugin-babel": "https://unpkg.com/systemjs-plugin-babel/plugin-babel.js",
@@ -73,11 +73,6 @@ var defaultMap = {
 
 var config = {
   map: Object.assign({}, defaultMap, window.D3_BOOTLOADER_MODULES),
-  // packages: {
-  //   "plugin-babel": {
-  //     main: "plugin-babel.js"
-  //   }
-  // },
   meta: { "*.json": { loader: "plugin-json" } },
   transpiler: "plugin-babel"
 };
