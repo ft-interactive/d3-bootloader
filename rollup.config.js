@@ -10,10 +10,7 @@ export default {
   plugins: [
     resolve(),
     commonjs({
-      include: [
-        'node_modules/systemjs/dist/system.src.js',
-        'node_modules/systemjs/dist/index.js',
-      ],
+      include: ['node_modules/systemjs/dist/system.src.js', 'node_modules/systemjs/dist/index.js'],
     }),
   ],
 };
