@@ -5,12 +5,10 @@
  */
 
 const cheerio = require('cheerio');
-const Axios = require('axios');
 const execa = require('execa');
 const tmp = require('tmp');
-const npm = require('npm');
 const pacote = require('pacote');
-const { readFileSync, writeFileSync, createWriteStream } = require('fs');
+const { readFileSync, writeFileSync } = require('fs');
 
 (async () => {
   try {
