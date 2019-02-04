@@ -59,7 +59,7 @@ const { readFileSync, writeFileSync } = require('fs');
 
     // Write updated index.html to $CWD
     console.info('Updating index.html...');
-    bootloaderTag.attr('src', './offline/index.js');
+    bootloaderTag.attr('src', './offline/d3-bootloader.js');
     writeFileSync(`${process.cwd()}/index.html`, $.html());
 
     console.info('Done!');
