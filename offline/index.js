@@ -9,34 +9,25 @@
  * in-browser tool for creating static print visualisations).
  */
 
-import SystemJS from "systemjs";
-import modules from "../modules.js";
+import SystemJS from 'systemjs';
+import modules from '../modules.js';
 
 const offlineModules = Object.entries(modules).reduce(
   (a, [k, v]) =>
     Object.assign({}, a, {
-      [k]: `./${
-        /d3js\.org\/d3\./.test(v)
-          ? "d3"
-          : /^@/.test(pkg)
-          ? pkg.slice(pkg.indexOf("/") + 1)
-          : pkg
-      }.js`
+      [k]: `./offline/${
+        /d3js\.org\/d3\./.test(v) ? 'd3' : /^@/.test(k) ? k.slice(k.indexOf('/') + 1) : k
+      }.js`,
     }),
-  {}
+  {},
 );
 
 const config = {
   map: offlineModules,
-  packages: {
-    "plugin-babel": {
-      main: "plugin-babel.js"
-    }
-  },
-  meta: { "*.json": { loader: "plugin-json" } },
-  transpiler: "plugin-babel"
+  meta: { '*.json': { loader: 'plugin-json' } },
+  transpiler: 'plugin-babel',
 };
 
 SystemJS.config(config);
 
-export default SystemJS.import("../index.js");
+export default SystemJS.import('../index.js');
