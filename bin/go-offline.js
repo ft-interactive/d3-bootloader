@@ -57,12 +57,6 @@ const { readFileSync, writeFileSync } = require('fs');
     // Move tmpDir/offline to $CWD
     await execa('mv', [`${tmpDir.name}/offline`, process.cwd()]);
 
-    // Remove tmp dir.
-    tmpDir.removeCallback();
-
-    // Remove the tarball
-    tmpFile.removeCallback();
-
     // Write updated index.html to $CWD
     console.info('Updating index.html...');
     bootloaderTag.attr('src', './offline/index.js');
