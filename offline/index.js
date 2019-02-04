@@ -10,14 +10,33 @@
  */
 
 import SystemJS from "systemjs";
-import modules from "./modules.js";
+import modules from "../modules.js";
 
-var config = {
-  map: Object.assign({}, modules, window.D3_BOOTLOADER_MODULES),
+const offlineModules = Object.entries(modules).reduce(
+  (a, [k, v]) =>
+    Object.assign({}, a, {
+      [k]: `./${
+        /d3js\.org\/d3\./.test(v)
+          ? "d3"
+          : /^@/.test(pkg)
+          ? pkg.slice(pkg.indexOf("/") + 1)
+          : pkg
+      }.js`
+    }),
+  {}
+);
+
+const config = {
+  map: offlineModules,
+  packages: {
+    "plugin-babel": {
+      main: "plugin-babel.js"
+    }
+  },
   meta: { "*.json": { loader: "plugin-json" } },
   transpiler: "plugin-babel"
 };
 
 SystemJS.config(config);
 
-export default SystemJS.import("./index.js");
+export default SystemJS.import("../index.js");

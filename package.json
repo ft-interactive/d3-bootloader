@@ -2,8 +2,12 @@
   "name": "@financial-times/d3-bootloader",
   "version": "0.0.0",
   "files": [
-    "dist/"
+    "dist/",
+    "offline/"
   ],
+  "bin": {
+    "offline": "bin/go-offline.js"
+  },
   "description": "Load D3 via SystemJS",
   "main": "index.js",
   "module": "index.js",
@@ -11,34 +15,41 @@
   "unpkg": "dist/d3-bootloader.min.js",
   "scripts": {
     "build": "rollup -c",
+    "offline:download-deps": "node -r esm get-offline.js",
     "minify": "uglifyjs --comments -c -m -o dist/d3-bootloader.min.js dist/d3-bootloader.js",
     "lint": "eslint index.js",
-    "prepare": "npm run build && npm run minify"
+    "prepare": "npm run offline:download-deps && npm run build && npm run minify"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ft-interactive/d3-bootloader.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ændrew Rininsland <andrew.rininsland@ft.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ft-interactive/d3-bootloader/issues"
   },
   "homepage": "https://github.com/ft-interactive/d3-bootloader#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "debug": "^3.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.6.0",
+    "esm": "^3.0.84",
     "npm-prepublish": "^1.2.2",
-    "rollup": "^0.43.0",
-    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup": "^0.67.4",
+    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "uglify-js": "^3.0.24"
   },
   "dependencies": {
-    "systemjs": "^0.20.14"
+    "cheerio": "^1.0.0-rc.2",
+    "execa": "^1.0.0",
+    "pacote": "^9.2.3",
+    "systemjs": "^0.20.14",
+    "tmp": "0.0.33"
   },
   "eslintConfig": {
     "extends": "airbnb-base",
