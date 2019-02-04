@@ -13,12 +13,7 @@ import SystemJS from "systemjs";
 import modules from "./modules.js";
 
 var config = {
-  map: modules,
-  packages: {
-    "plugin-babel": {
-      main: "plugin-babel.js"
-    }
-  },
+  map: Object.assign({}, modules, window.D3_BOOTLOADER_MODULES),
   meta: { "*.json": { loader: "plugin-json" } },
   transpiler: "plugin-babel"
 };

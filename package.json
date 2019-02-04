@@ -12,6 +12,7 @@
   "main": "index.js",
   "module": "index.js",
   "browser": "dist/d3-bootloader.min.js",
+  "unpkg": "dist/d3-bootloader.min.js",
   "scripts": {
     "build": "rollup -c",
     "offline:download-deps": "node -r esm get-offline.js",
@@ -52,6 +53,7 @@
   },
   "eslintConfig": {
     "extends": "airbnb-base",
+    "root": true,
     "env": {
       "browser": true
     },

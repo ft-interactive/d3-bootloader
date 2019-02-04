@@ -1,4 +1,5 @@
 offline/*
 !offline/index.js
+dist
 node_modules
 dist/
