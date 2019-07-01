@@ -16,9 +16,20 @@ var config = {
   paths: {
     'npm:': 'https://unpkg.com/',
   },
+  packages: {
+    babel: {
+      main: 'browser.min.js',
+    },
+    react: {
+      main: 'react.js',
+    },
+    'react-dom': {
+      main: 'index.js',
+    },
+  },
   map: Object.assign({}, modules, window.D3_BOOTLOADER_MODULES),
   meta: { '*.json': { loader: 'plugin-json' } },
-  transpiler: 'plugin-babel',
+  transpiler: 'babel',
 };
 
 SystemJS.config(config);
