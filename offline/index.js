@@ -24,7 +24,14 @@ const offlineModules = Object.entries(modules).reduce(
 
 const config = {
   map: offlineModules,
-  meta: { '*.json': { loader: 'plugin-json' } },
+  meta: {
+    '*.json': { loader: 'plugin-json' },
+    '*.js': {
+      babelOptions: {
+        react: true,
+      },
+    },
+  },
   transpiler: 'plugin-babel',
 };
 
