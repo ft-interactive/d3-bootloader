@@ -33,23 +33,23 @@
   },
   "homepage": "https://github.com/ft-interactive/d3-bootloader#readme",
   "devDependencies": {
-    "axios": "^0.18.0",
-    "debug": "^3.1.0",
+    "axios": "^0.18.1",
+    "debug": "^3.2.6",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.6.0",
-    "esm": "^3.0.84",
-    "npm-prepublish": "^1.2.2",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.18.0",
+    "esm": "^3.2.25",
+    "npm-prepublish": "^1.2.3",
     "rollup": "^0.67.4",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "uglify-js": "^3.0.24"
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "uglify-js": "^3.6.0"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.3",
     "execa": "^1.0.0",
-    "pacote": "^9.2.3",
-    "systemjs": "^0.20.14",
+    "pacote": "^9.5.1",
+    "systemjs": "^0.20.19",
     "tmp": "0.0.33"
   },
   "eslintConfig": {
