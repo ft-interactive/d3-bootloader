@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/ft-interactive/d3-bootloader#readme",
   "devDependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "debug": "^3.2.6",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.3.2",
