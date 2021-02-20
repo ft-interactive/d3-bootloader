@@ -9,15 +9,29 @@
  * in-browser tool for creating static print visualisations).
  */
 
-import SystemJS from "systemjs";
-import modules from "./modules.js";
+import SystemJS from 'systemjs';
+import modules from './modules.js';
 
 var config = {
+  paths: {
+    'npm:': 'https://unpkg.com/',
+  },
+  packages: {
+    babel: {
+      main: 'browser.min.js',
+    },
+    react: {
+      main: 'react.js',
+    },
+    'react-dom': {
+      main: 'index.js',
+    },
+  },
   map: Object.assign({}, modules, window.D3_BOOTLOADER_MODULES),
-  meta: { "*.json": { loader: "plugin-json" } },
-  transpiler: "plugin-babel"
+  meta: { '*.json': { loader: 'plugin-json' } },
+  transpiler: 'babel',
 };
 
 SystemJS.config(config);
 
-export default SystemJS.import("./index.js");
+export default SystemJS.import('./index.js');
